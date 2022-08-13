@@ -56,7 +56,7 @@ public class BrandTest {
         //6,处理结果 List<Brand>
         Brand brand = null;
         List<Brand> brands = new ArrayList<>();
-        while(rs.next()){
+        while (rs.next()) {
             //获取数据
             int id = rs.getInt("id");
             String brandName = rs.getString("brand_name");
@@ -117,17 +117,17 @@ public class BrandTest {
         PreparedStatement pstmt = conn.prepareStatement(sql);
 
         //4,设置参数
-        pstmt.setString(1,brandName);
-        pstmt.setString(2,companyName);
-        pstmt.setInt(3,ordered);
-        pstmt.setString(4,description);
-        pstmt.setInt(5,status);
+        pstmt.setString(1, brandName);
+        pstmt.setString(2, companyName);
+        pstmt.setInt(3, ordered);
+        pstmt.setString(4, description);
+        pstmt.setInt(5, status);
 
         //5,执行sql
         int count = pstmt.executeUpdate();
 
         //6,处理结果
-        System.out.println(count>0);
+        System.out.println(count > 0);
 
         //关闭资源
         pstmt.close();
